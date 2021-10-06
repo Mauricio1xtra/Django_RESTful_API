@@ -1,15 +1,15 @@
 from rest_framework import serializers
 
 from agendamentos.models import Agendamentos
-from historicos.api.serializers import HistoricosSerializer
+from historicos.api.serializers import HistoricosDetalhesSerializer
 
 class AgendamentosSerializer(serializers.ModelSerializer):
     class Meta:
         model = Agendamentos
-        fields = ('__all__')
+        fields = '__all__'
         
 class AgendamentosDetalhesSerializer(serializers.ModelSerializer):
-    historicos = HistoricosSerializer(many=True, read_only=True)
+    historicos = HistoricosDetalhesSerializer(many=True, read_only=True)
     class Meta:
         model = Agendamentos
         fields = [

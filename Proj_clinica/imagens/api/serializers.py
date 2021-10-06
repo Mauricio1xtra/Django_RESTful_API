@@ -2,7 +2,7 @@ from rest_framework import serializers
 
 from imagens.models import ImagensHistorico
 
-class ImagensHistoricoSerializer(serializers.Serializer):
+class ImagensHistoricoSerializer(serializers.ModelSerializer):
     class Meta:
         model = ImagensHistorico
-        fields = ('__all__')
+        fields = '__all__'

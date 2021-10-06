@@ -1,7 +1,6 @@
 from django.db import models
 
 # Create your models here.
-
 class Pacientes(models.Model):
     id_paciente = models.AutoField(primary_key=True)
     nome = models.CharField(max_length=100, blank=True, null=True)
@@ -12,7 +11,7 @@ class Pacientes(models.Model):
     cep = models.CharField(max_length=100, blank=True, null=True)
     data_cadastro = models.DateTimeField(auto_now_add=True, null=True)
     rg = models.CharField(max_length=100, blank=True, null=True)
-    
+
     class Meta:
         managed = True
         db_table = 'pacientes'
